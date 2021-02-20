@@ -26,12 +26,13 @@ setup(
             "Topic :: Utilities",
             ],
         keywords="Highchart Visualization Chart Map",
-        packages=find_packages("highchartexport"),
+        packages=find_packages(),
         install_requires=["requests>=2"],
         entry_points={
             'console_scripts': [
                 'highchartexport=highchartexport.__main__:main'
                 ]
             },
-        python_requires=">=3.6"
+        python_requires=">=3.6",
+        zip_safe=False
         )
