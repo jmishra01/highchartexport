@@ -1,11 +1,6 @@
-import sys
-from json import dumps
+from json import dumps as __dumps__
 import requests
 
-HIGHCHART_EXPORT_URL = "https://export.highcharts.com/"
-
-HIGHCHART_HEADERS = {"Content-type": "application/json", 'Cookie': '__cfduid=d2e2782a64847f0a58f714fa5ab68939e1613642479',
-        "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.150 Safari/537.36"}
 
 BASIC_CONFIG = None
 
@@ -23,7 +18,10 @@ def __check_basic_config__(f):
     return wrap
 
 def __get_content__(data):
-    resp = requests.request("POST", HIGHCHART_EXPORT_URL, headers=HIGHCHART_HEADERS, data=data)
+    HIGHCHART_EXPORT_URL = "https://export.highcharts.com/"
+    HIGHCHART_HEADERS = {"Content-type": "application/json", 'Cookie': '__cfduid=d2e2782a64847f0a58f714fa5ab68939e1613642479', 
+            "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.150 Safari/537.36"}
+    resp = requests_.request("POST", HIGHCHART_EXPORT_URL, headers=HIGHCHART_HEADERS, data=data)
     content = resp.content
     if not isinstance(content, bytes):
         if content[-4:] == ".png":
@@ -43,7 +41,7 @@ def __basic_config__(config: dict):
     """
     Highchart configuration
     """
-    BASIC_CONFIG["infile"] = dumps(config) if isinstance(config, dict) else config
+    BASIC_CONFIG["infile"] = __dumps__(config) if isinstance(config, dict) else config
 
 @__check_basic_config__
 def __set_type__(file_type: str):
@@ -82,7 +80,7 @@ def __pdf__():
 
 @__check_basic_config__
 def __save__(filename):
-    data = dumps(BASIC_CONFIG)
+    data = __dumps__(BASIC_CONFIG)
     __create_chart_file__(data, filename)
 
 @__check_basic_config__
@@ -179,5 +177,5 @@ def save(config: dict, filename: str, file_type: str = "png", **kwargs):
         __set_type__(file_type)
         __save__(filename)
 
-
+# To reset basic config variable content
 reset_basic_config = set_basic_config
