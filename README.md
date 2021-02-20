@@ -1,13 +1,15 @@
 # highchartexport
 Convert highchart configuration into image file
 
-**Install**
-
+**Installation**
+You can use pip command
+```terminal
 pip install highchartexport
+```
 
 **Example**
 
-You can use it as a terminal command
+In terminal
 ```terminal
 highchartexport --json "{\"chart\":{\"type\":\"area\"},\"series\":[{\"data\":[1,2,3,4,5,6],\"name\":\"areaplot\"}]}" --out area_chart.png
 ```
@@ -16,7 +18,7 @@ highchartexport --json "{\"chart\":{\"type\":\"area\"},\"series\":[{\"data\":[1,
 highchartexport --json "{\"chart\":{\"type\":\"area\"},\"series\":[{\"data\":[1,2,3,4,5,6],\"name\":\"areaplot\"}]}" --out area_chart.png --width 2000 --scale 2
 ```
 
-Pass highchart configuration json file
+Pass highchart json file
 
 ```terminal
 highchartexport --in hc_config.json --out area_chart.svg --width 2000 --scale 2 --type svg
@@ -26,7 +28,7 @@ highchartexport --in hc_config.json --out area_chart.svg --width 2000 --scale 2 
 highchartexport --in hc_config.json --out area_chart.svg --chart StockChart --width 2000 --scale 2 --type svg
 ```
 
-You can also use it in your code
+Import in Python interpretor
 ```python
 import highchartexport as hc_export
 

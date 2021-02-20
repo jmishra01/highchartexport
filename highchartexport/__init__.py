@@ -21,7 +21,7 @@ def __get_content__(data):
     HIGHCHART_EXPORT_URL = "https://export.highcharts.com/"
     HIGHCHART_HEADERS = {"Content-type": "application/json", 'Cookie': '__cfduid=d2e2782a64847f0a58f714fa5ab68939e1613642479', 
             "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.150 Safari/537.36"}
-    resp = requests_.request("POST", HIGHCHART_EXPORT_URL, headers=HIGHCHART_HEADERS, data=data)
+    resp = requests.request("POST", HIGHCHART_EXPORT_URL, headers=HIGHCHART_HEADERS, data=data)
     content = resp.content
     if not isinstance(content, bytes):
         if content[-4:] == ".png":
