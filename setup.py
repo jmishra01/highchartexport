@@ -5,7 +5,7 @@ with open("README.md") as readme_file:
 
 setup(
         name="highchartexport",
-        version="1.0.0",
+        version="0.0.1",
         description="Python package that convert highchart configuration into image file",
         long_description=long_description,
         long_description_content_type="text/markdown",
