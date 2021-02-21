@@ -1,6 +1,5 @@
 # highchartexport
-Convert highchart configuration into an image file
-
+Convert highchart configuration into an image file using export server of HighCharts, which is http://export.highcharts.com/
 
 
 **Installation**
