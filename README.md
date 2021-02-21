@@ -22,12 +22,24 @@ highchartexport --json "{\"chart\":{\"type\":\"area\"},\"series\":[{\"data\":[1,
 
 Pass highchart json file
 
+* For PNG image file
+```terminal
+highchartexport --in hc_config.json --out area_chart.png --width 2000 --scale 2 --type png
+```
+
+* For SVG file
 ```terminal
 highchartexport --in hc_config.json --out area_chart.svg --width 2000 --scale 2 --type svg
 ```
 
+* For SVG file with StockChart
 ```terminal
 highchartexport --in hc_config.json --out area_chart.svg --chart StockChart --width 2000 --scale 2 --type svg
+```
+
+* For PDF file with Map Chart
+```terminal
+highchartexport --in hc_config.json --out area_chart.svg --chart Map --width 2000 --scale 2 --type pdf
 ```
 
 Import in Python interpretor
