@@ -4,6 +4,7 @@ Convert highchart configuration into an image file
 
 
 **Installation**
+
 You can use pip command
 ```terminal
 pip install highchartexport
