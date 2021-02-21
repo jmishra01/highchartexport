@@ -1,5 +1,7 @@
 # highchartexport
-Convert highchart configuration into image file
+Convert highchart configuration into an image file
+
+
 
 **Installation**
 You can use pip command
@@ -61,6 +63,9 @@ config = {
     }]
 }
 
+# use default width and scale value
 hc_export.save_as_pdf(config=config, filename="bubble.pdf")
 
+# you can pass width and scale value
+hc_export.save_as_pdf(config=config, filename="bubble.pdf", width=1000, scale=4)
 ```
