@@ -42,7 +42,7 @@ highchartexport --in hc_config.json --out area_chart.svg --chart StockChart --wi
 highchartexport --in hc_config.json --out area_chart.svg --chart Map --width 2000 --scale 2 --type pdf
 ```
 
-Import in Python interpretor
+Import in your Python program
 ```python
 import highchartexport as hc_export
 
