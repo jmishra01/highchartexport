@@ -1,6 +1,6 @@
 from json import dumps as __dumps__
 import requests
-
+VERSION = "v0.0.4"
 
 BASIC_CONFIG = None
 
